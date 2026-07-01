@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package videoai;
+
+service VideoAIService {
+  rpc ChatStream (ChatRequest) returns (stream ChatResponse);
+}
+
+message ChatRequest {
+  string user_query = 1;
+  string video_path = 2;
+  bool is_clarification_response = 3;
+  string selected_option = 4;
+}
+
+message ChatResponse {
+  enum ResponseType {
+    TEXT_CHUNK = 0;
+    CLARIFICATION_REQUIRED = 1;
+    REPORT_GENERATED = 2;
+  }
+  ResponseType type = 1;
+  string content = 2;
+  repeated string clarification_options = 3;
+  string file_url = 4;
+}
