@@ -1,0 +1,9 @@
+# .gitignore
+node_modules/
+src-tauri/target/
+__pycache__/
+*.pyc
+venv/
+outputs/
+models/
+*.mp4
