@@ -7,3 +7,23 @@ venv/
 outputs/
 models/
 *.mp4
+
+# Backend build and packaging outputs
+backend/build/
+backend/dist/
+backend/outputs/
+backend/pyinstaller-build.log
+backend/*.log
+backend/ffmpeg/bin/
+
+# Frontend / Tauri build outputs
+frontend/node_modules/
+frontend/dist/
+frontend/src-tauri/target/
+
+# Python local environment in backend
+backend/venv/
+
+# C# launcher build outputs
+launcher/bin/
+launcher/obj/
