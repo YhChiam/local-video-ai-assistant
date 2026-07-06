@@ -1,0 +1,8 @@
+openvino-genai
+openai-whisper
+ffmpeg-python
+numpy
+opencv-python
+pytesseract
+Pillow
+pyinstaller

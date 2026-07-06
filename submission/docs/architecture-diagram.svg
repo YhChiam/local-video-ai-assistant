@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900" role="img" aria-labelledby="title desc">
+  <title id="title">Local Video AI Assistant Architecture</title>
+  <desc id="desc">Architecture diagram showing React and Tauri frontend, Python gRPC backend, local agents, OCR and report generation, and timestamped outputs.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f6f8fb; }
+      .box { fill: #ffffff; stroke: #253858; stroke-width: 2; rx: 12; ry: 12; }
+      .svc { fill: #eef4ff; stroke: #335d92; stroke-width: 2; rx: 12; ry: 12; }
+      .tool { fill: #ecfff7; stroke: #1f7a5c; stroke-width: 2; rx: 12; ry: 12; }
+      .store { fill: #fff8e8; stroke: #9a6b16; stroke-width: 2; rx: 12; ry: 12; }
+      .text { font-family: Segoe UI, Arial, sans-serif; font-size: 18px; fill: #1e2a39; }
+      .small { font-family: Segoe UI, Arial, sans-serif; font-size: 15px; fill: #1e2a39; }
+      .arrow { stroke: #475569; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+      .title { font-family: Segoe UI, Arial, sans-serif; font-weight: 700; font-size: 30px; fill: #0f172a; }
+      .subtitle { font-family: Segoe UI, Arial, sans-serif; font-size: 16px; fill: #334155; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#475569" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1500" height="900" />
+  <text class="title" x="40" y="52">Local Video AI Assistant - Architecture</text>
+  <text class="subtitle" x="40" y="82">Fully local processing pipeline with React + Tauri, Python gRPC orchestration, and local model/runtime tools</text>
+
+  <rect class="box" x="40" y="140" width="320" height="150" />
+  <text class="text" x="60" y="182">User + Desktop UI</text>
+  <text class="small" x="60" y="215">- React chat interface</text>
+  <text class="small" x="60" y="240">- MP4 file picker</text>
+  <text class="small" x="60" y="265">- Session history + HITL prompts</text>
+
+  <rect class="box" x="40" y="350" width="320" height="130" />
+  <text class="text" x="60" y="392">C# Launcher (.NET 10)</text>
+  <text class="small" x="60" y="425">- Prefers packaged server.exe</text>
+  <text class="small" x="60" y="450">- Falls back to Python server.py</text>
+
+  <rect class="svc" x="450" y="120" width="430" height="430" />
+  <text class="text" x="475" y="165">Python gRPC Backend Orchestrator</text>
+  <text class="small" x="475" y="195">backend/server.py + backend/mcp_server.py</text>
+
+  <rect class="svc" x="480" y="220" width="370" height="90" />
+  <text class="text" x="500" y="255">Transcription Agent</text>
+  <text class="small" x="500" y="282">Local Whisper/OpenVINO + no-speech guardrails</text>
+
+  <rect class="svc" x="480" y="325" width="370" height="90" />
+  <text class="text" x="500" y="360">Vision Agent</text>
+  <text class="small" x="500" y="387">OpenCV object/graph cues + local OCR</text>
+
+  <rect class="svc" x="480" y="430" width="370" height="90" />
+  <text class="text" x="500" y="465">Generation Agent</text>
+  <text class="small" x="500" y="492">PDF/PPT export with discussion summary</text>
+
+  <rect class="tool" x="960" y="140" width="470" height="140" />
+  <text class="text" x="985" y="178">Local AI + Runtime Tools</text>
+  <text class="small" x="985" y="208">- openai-whisper / optional OpenVINO</text>
+  <text class="small" x="985" y="233">- OpenCV + pytesseract + local Tesseract</text>
+  <text class="small" x="985" y="258">- ffmpeg (bundled in packaged build)</text>
+
+  <rect class="tool" x="960" y="320" width="470" height="130" />
+  <text class="text" x="985" y="358">Document Generation</text>
+  <text class="small" x="985" y="388">- reportlab for PDF</text>
+  <text class="small" x="985" y="413">- python-pptx for PowerPoint</text>
+
+  <rect class="store" x="450" y="610" width="980" height="180" />
+  <text class="text" x="475" y="650">Local Storage and Outputs</text>
+  <text class="small" x="475" y="680">- frontend localStorage: persistent chat sessions</text>
+  <text class="small" x="475" y="705">- backend/outputs: timestamped PDF and PPTX (no overwrite)</text>
+  <text class="small" x="475" y="730">- submission/: input videos, generated samples, docs, final summary</text>
+
+  <path class="arrow" d="M360 215 L450 215" />
+  <path class="arrow" d="M360 410 L450 410" />
+  <path class="arrow" d="M880 265 L960 210" />
+  <path class="arrow" d="M880 360 L960 360" />
+  <path class="arrow" d="M880 475 L960 385" />
+  <path class="arrow" d="M665 550 L665 610" />
+  <path class="arrow" d="M200 290 L200 350" />
+</svg>

@@ -1,0 +1,26 @@
+Local Video AI Assistant - Run Proof
+Date: 2026-07-06
+
+Repository path:
+C:\yhchiam\local-video-ai-assistant
+
+Verified launch command:
+dotnet run --project c:\yhchiam\local-video-ai-assistant\launcher\BackendLauncher.csproj
+
+Observed output:
+PS C:\yhchiam\local-video-ai-assistant> dotnet run --project c:\yhchiam\local-video-ai-assistant\launcher\BackendLauncher.csproj
+Launching backend from: c:\yhchiam\local-video-ai-assistant\backend\dist\server\server.exe
+🚀 Standalone Backend Agent Server live at localhost:50052
+
+Interpretation:
+- The C# launcher started successfully.
+- The launcher selected the packaged backend executable path.
+- The backend gRPC service started and listened on localhost.
+
+Desktop app run command (separate terminal):
+cd c:\yhchiam\local-video-ai-assistant\frontend
+npm run tauri dev
+
+Notes:
+- Keep backend terminal running while using the desktop app.
+- For web-only frontend mode, use `npm run dev` in `frontend`.
