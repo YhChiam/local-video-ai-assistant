@@ -356,8 +356,8 @@ Before submission, replace `.gitkeep` placeholders with real sample assets.
 - [x] Architecture diagram in the repository documentation
 - [x] C# launcher scaffold for backend startup
 - [x] Delivery summary covering what works, what does not, challenges, and future improvements
-- [ ] Example input video files committed in the repository
-- [ ] Sample generated PDF and PPT outputs committed in the repository
+- [x] Example input video files committed in the repository
+- [x] Sample generated PDF and PPT outputs committed in the repository
 
 The unchecked items are the remaining submission artifacts rather than missing product functionality.
 
